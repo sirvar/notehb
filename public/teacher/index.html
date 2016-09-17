@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Teacher</title>
+	<title>NoteHB</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
 </head>
 <body>
-	<h1>NoteHB - Teacher</h1>
-	<div id="left">
-		<textarea id="textarea"></textarea>
-		<script type="text/javascript">
-			$("textarea").height( $("textarea")[0].scrollHeight );
-		</script>
-	</div>
-	<div id="right">
-		<div id="start-pause-stop">
-			<button id="play-pause"></button>
-			<button id="stop"></button>
-		</div>
-	</div>
+<div id="content">
+	<h1>NoteHB</h1>
+		<button id="signin-student"><img src="https://developers.google.com/identity/images/btn_google_signin_light_normal_web.png"></button>
+</div>
 </body>
 </html>
