@@ -28,27 +28,61 @@
 					<button id="play-pause" value="paused"><img src="../../img/play.png" alt="A play button" /></button>
 					<button id="stop"><img src="../../img/stop.png" alt="A stop button" /></button>
 					<script type="text/javascript">
+						var seconds = 0;			//Time elapsed in seconds
+						var minutes = 0;
+						var hours = 0;
+						var paused = true;
+						var stopped = false;
+						var n;
+						var time = "";
+						$("#stop").css("opacity", "0.2");
+
+						window.setInterval(function() {
+							if (!paused && !stopped) {
+								seconds += 1;
+								if (seconds >= 60) {
+									seconds = 0;
+									minutes += 1;
+								}
+								if (minutes >= 60) {
+									minutes = 0;
+									hours += 1
+								}
+								document.getElementById("time-elapsed").innerHTML = hours + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+									(seconds < 10 ? "0" + seconds : seconds);
+							}
+						}, 1000);
+
 						$("#play-pause").click(function() {
-							if ($(this).attr("value") == "paused") {
+							if ($(this).attr("value") == "paused" && !(paused = paused == stopped) && !stopped) {
 								$(this).attr("value", "playing");
 								$(this).html('<img src="../../img/pause.png" alt="A pause button" />');
+								$("#stop").css("opacity", 1);
 							}
 							else {
+								paused = true;
 								$(this).attr("value", "paused");
-								$(this).html('<img src="../../img/play.png" alt="A play button" />');
+								if (!stopped)
+									$(this).html('<img src="../../img/play.png" alt="A play button" />');
 							}
 						})
 						$("#stop").click(function () {
 							var playpause = $("#play-pause");
-							if (playpause.attr("value") == "playing") {
+							if (!stopped && playpause.attr("value") == "playing") {
 								playpause.attr("value", "paused");
 								playpause.html('<img src="../../img/play.png" alt="A play button" />');
+							}
+							if (seconds != 0 || minutes != 0 || hours != 0) {
+								stopped = true;
+								$(playpause).html('<img src="../../img/play.png" alt="A play button" />');
+								$(playpause).css("opacity", "0.2");
+								$(this).css("opacity", 0.2);
 							}
 						})
 					</script>
 				</div>
 				<div id="timer">
-					<h1>00:00:00</h1>
+					<h1 id="time-elapsed">00:00:00</h1>
 				</div>
 			</td>
 			<td class="right">
