@@ -54,6 +54,7 @@ $(document).ready(function() {
 		}
 	})
 	$("#stop").click(function () {
+		startListening(null);
 		var playpause = $("#play-pause");
 		if (!stopped && playpause.attr("value") == "playing") {
 			playpause.attr("value", "paused");
@@ -130,8 +131,8 @@ $(document).ready(function() {
 	          }
 	        }
 	        $("#textarea").append(final_transcript);
+	        $("#interim_textarea").text(interim_transcript);
 	  };
-
 
 	return firebase.database().ref('/teachers/' + uid).once('value')
 	.then(function(snapshot) {
