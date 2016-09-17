@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Teacher</title>
+	<title>Student</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-linedtextarea.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/jquery-linedtextarea.js"></script>
 </head>
 <body>
-	<div id="left">
-		<div class="top">
-			<h1 id="classcode"></h1>
-		</div>
-		<div class="bottom">
-			<div id="start-pause-stop">
-				<button id="play-pause" value="paused"><img src="../../img/play.png" alt="A play button"/></button>
-				<script type="text/javascript">
-					$("#play-pause").click(function() {
-						if ($(this).attr("value") == "paused") {
-							$(this).attr("value", "playing");
-							$(this).html('<img src="../../img/pause.png" alt="A pause button" />');
-						}
-						else {
-							$(this).attr("value", "paused");
-							$(this).html('<img src="../../img/play.png" alt="A play button" />');
-						}
-					})
+	<table id="container">
+		<tr id="top">
+			<td class="left">
+				<h1 id="classcode"></h1>
+			</td>
+			<td class="right">
+				<img id="logo" src="../../img/notehb-logo.png">
+			</td>
+		</tr>
+		<tr id="bottom">
+			<td colspan="2">
+				<textarea class="lined" cols="60" rows="50"></textarea>
+				<script>
+					$(function() {
+						$(".lined").linedtextarea(
+							{selectedLine: 1}
+						);
+					});
 				</script>
-				<button id="stop"></button>
-			</div>
-		</div>
-	</div>
-	<hr id="separator" />
-	<div id="right">
-		<div class="top">
-			<img id="logo" src="../../img/notehb-logo.png">
-		</div>
-		<div class="bottom">
-			<textarea id="textarea"></textarea>
-		</div>
-	</div>
+			</td>
+		</tr>
+	</table>
 </body>
 </html>
