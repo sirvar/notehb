@@ -28,9 +28,8 @@ $(document).ready(function() {
 				if (snapshot.val() == null) {
 					addTeacher(user.uid, user.displayName, user.email, classCode);
 				}
+				window.location.href = "/teacher/dashboard/"
 			});
-
-			window.location.replace("./dashboard");
 			
 		}).catch(function(error) {
 		  // Handle Errors here.
