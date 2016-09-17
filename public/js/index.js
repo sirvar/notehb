@@ -12,8 +12,9 @@ firebase.initializeApp(config);
 $(document).ready(function() {
 	var provider = new firebase.auth.GoogleAuthProvider();
 	var database = firebase.database();
-	
-	$("#signin-student").click(function() {
+
+	$("#signin-teacher").click(function() {
+		console.log("yea");
 		firebase.auth().signInWithPopup(provider).then(function(result) {
 		  // This gives you a Google Access Token. You can use it to access the Google API.
 		  var token = result.credential.accessToken;
@@ -28,6 +29,7 @@ $(document).ready(function() {
 		  var email = error.email;
 		  // The firebase.auth.AuthCredential type that was used.
 		  var credential = error.credential;
+		  console.log(errorMessage);
 		});
 	});
 });
