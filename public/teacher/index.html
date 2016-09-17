@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teacher</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<h1>NoteHB - Teacher</h1>
+	<div id="left">
+		<textarea id="textarea"></textarea>
+		<script type="text/javascript">
+			$("textarea").height( $("textarea")[0].scrollHeight );
+		</script>
+	</div>
+	<div id="right">
+		<div id="start-pause-stop">
+			<button id="play-pause"></button>
+			<button id="stop"></button>
+		</div>
+	</div>
+</body>
+</html>
