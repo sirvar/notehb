@@ -7,17 +7,36 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
-	<h1>NoteHB - Teacher</h1>
 	<div id="left">
-		<textarea id="textarea"></textarea>
-		<script type="text/javascript">
-			$("textarea").height( $("textarea")[0].scrollHeight );
-		</script>
+		<div class="top">
+			<h1>Teacher</h1>
+		</div>
+		<div class="bottom">
+			<div id="start-pause-stop">
+				<button id="play-pause" value="paused"><img src="../../img/play.png" alt="A play button"/></button>
+				<script type="text/javascript">
+					$("#play-pause").click(function() {
+						if ($(this).attr("value") == "paused") {
+							$(this).attr("value", "playing");
+							$(this).html('<img src="../../img/pause.png" alt="A pause button" />');
+						}
+						else {
+							$(this).attr("value", "paused");
+							$(this).html('<img src="../../img/play.png" alt="A play button" />');
+						}
+					})
+				</script>
+				<button id="stop"></button>
+			</div>
+		</div>
 	</div>
+	<hr id="separator" />
 	<div id="right">
-		<div id="start-pause-stop">
-			<button id="play-pause"></button>
-			<button id="stop"></button>
+		<div class="top">
+			<h1>NoteHB</h1>
+		</div>
+		<div class="bottom">
+			<textarea id="textarea"></textarea>
 		</div>
 	</div>
 </body>
