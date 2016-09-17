@@ -1,0 +1,19 @@
+{
+  "name": "notehb",
+  "version": "1.0.0",
+  "description": "Collaborative Live Note Taking",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirvar/notehb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirvar/notehb/issues"
+  },
+  "homepage": "https://github.com/sirvar/notehb#readme"
+}
