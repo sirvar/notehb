@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:100,300,400';
 
 body {
-	background-color: #F8F8FF;
+	background-color: #fff;
 	font-family: 'Roboto';
 	padding: 0;
 	margin: 0;
@@ -26,7 +26,7 @@ img {
 
 #students {
 	position: absolute;
-	top: 15%;
+	top: 25%;
 	width: 200px;
 	left: calc(10% - 100px);
 }
@@ -42,6 +42,10 @@ img {
 	padding-top: 0;
 }
 
+#students h2 {
+	margin-top: 10px;
+}
+
 button {
 	width: 85px;
 	height: 85px;
@@ -51,7 +55,7 @@ button {
 	outline: none;
 	border: 4px solid #00bfff;
 	border-radius: 5px;
-	transition: background-color ease-in 0.2s;
+	transition: background-color ease-in 0.1s;
 }
 
 #play-pause {
@@ -67,8 +71,8 @@ button:hover {
 	padding: 5px 10px;
 	width: 200px; 
 	margin: 0;
-	box-shadow: 2px 2px 5px #00bfff;
-	bottom: 10px;
+	box-shadow: 3px 3px 8px #999;
+	bottom: 25px;
 	left: calc(10% - 105px);
 }
 
@@ -76,8 +80,8 @@ button:hover {
 	font-size: 50px;
 }
 
-#textarea {
-	background-color: #F8F8FF;
+textarea {
+	background-color: #fff;
 	color: #8b8989;
 	font-size: 16px;
 	width: 95%;
@@ -88,7 +92,7 @@ button:hover {
 	overflow-y: scroll;
 }
 
-#textarea:focus {
+textarea:focus {
 	outline: none;
 }
 
