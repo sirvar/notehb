@@ -11,7 +11,7 @@ body {
 h1 {
 	color: #00bfff;
 	text-align: center;
-	font-size: 26px;
+	font-size: 32px;
 }
 
 img {
@@ -19,52 +19,32 @@ img {
 	height: 100%;
 }
 
-.top {
-	text-align: center;
-	margin-top: 0;
-	height: 100px;
-}
-
-#logo {
-	width: auto;
-	height: 130px;
-}
-
-#separator {
-	position: fixed;
-	left: 0px;
-	right: 0px;
-	top: 140px;
-	margin: 0px;
-	padding: 0px;
-	width: 100%;
-	height: 2px;
-	background-color: #cdc9c9;
-	border: none;
-}
-
-.bottom {
-	margin-top: 40px;
-}
-
-#left {
-	left: 0;
-	width: 20%;
-	height: 100%;
-	margin: 0;
-	padding-bottom: 100%;
-	float: left;
-	border-right: 2px solid #cdc9c9;
-}
-
 #start-pause-stop {
-	width: 150px;
+	width: 200px;
 	margin: 0 auto;
 }
 
+#students {
+	position: absolute;
+	top: 15%;
+	width: 200px;
+	left: calc(10% - 100px);
+}
+
+#num-students {
+	font-size: 50px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+#students>p {
+	margin-top: 0;
+	padding-top: 0;
+}
+
 button {
-	width: 60px;
-	height: 60px;
+	width: 85px;
+	height: 85px;
 	margin: 0;
 	padding: 0;
 	background-color: #FFFFFF;
@@ -74,28 +54,94 @@ button {
 	transition: background-color ease-in 0.2s;
 }
 
+#play-pause {
+	margin-right: 25px;
+}
+
 button:hover {
 	background-color: #00bfff;
 }
 
-#right {
-	width: 75%;
-	padding: 0;
+#timer {
+	position: absolute;
+	padding: 5px 10px;
+	width: 200px; 
 	margin: 0;
-	float: right;
+	box-shadow: 2px 2px 5px #00bfff;
+	bottom: 10px;
+	left: calc(10% - 105px);
 }
 
-#textarea {
+#timer>h1 {
+	font-size: 50px;
+}
+
+textarea {
 	background-color: #F8F8FF;
 	color: #8b8989;
 	font-size: 16px;
-	width: 95%;
-	height: 500px;
+	width: 100%;
 	padding: 0;
-	margin: 10px;
 	resize: none;
+	overflow-y: auto;
+	border: none;
 }
 
-#textarea:focus {
+textarea:focus {
 	outline: none;
+}
+
+/* TABLES */
+#container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+#logo {
+	width: auto;
+	height: 20%;
+}
+
+#top {
+	height: 10%;
+}
+
+#bottom {
+	height: 90%;
+}
+
+.left {
+	width: 20%;
+}
+
+#container, #container th, #container td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#container td {
+	padding: 0;
+	margin: 0;
+}
+
+#content {
+	border: none;
+	border-collapse: collapse;
+	width: 95%;
+	margin: 0 auto;
+}
+
+#line-nums {
+	text-align: right;
+	border: none;
+	border-right: 3px solid #00bfff;
+	width: 4em;
 }
