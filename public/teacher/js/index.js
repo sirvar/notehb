@@ -24,11 +24,14 @@ $(document).ready(function() {
 
 			return firebase.database().ref('/teachers/' + user.uid).once('value')
 			.then(function(snapshot) {
+				console.log(snapshot.val());
 				if (snapshot.val() == null) {
 					addTeacher(user.uid, user.displayName, user.email, classCode);
 				}
 			});
 
+			window.location.replace("./dashboard");
+			
 		}).catch(function(error) {
 		  // Handle Errors here.
 		  var errorCode = error.code;
