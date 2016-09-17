@@ -9,13 +9,58 @@
 	<script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
+	<table>
+		<tr id="top">
+			<td class="left">
+				<h1>Teacher</h1>
+			</td>
+			<td class="right">
+				<img id="logo" src="../../img/notehb-logo.png">
+			</td>
+		</tr>
+		<tr id="bottom">
+			<td class="left">
+				<div id="start-pause-stop">
+					<button id="play-pause" value="paused"><img src="../../img/play.png" alt="A play button" /></button>
+					<button id="stop"><img src="../../img/stop.png" alt="A stop button" /></button>
+					<script type="text/javascript">
+						$("#play-pause").click(function() {
+							if ($(this).attr("value") == "paused") {
+								$(this).attr("value", "playing");
+								$(this).html('<img src="../../img/pause.png" alt="A pause button" />');
+							}
+							else {
+								$(this).attr("value", "paused");
+								$(this).html('<img src="../../img/play.png" alt="A play button" />');
+							}
+						})
+						$("#stop").click(function () {
+							var playpause = $("#play-pause");
+							if (playpause.attr("value") == "playing") {
+								playpause.attr("value", "paused");
+								playpause.html('<img src="../../img/play.png" alt="A play button" />');
+							}
+						})
+					</script>
+				</div>
+				<div id="timer">
+					<h1>00:00:00</h1>
+				</div>
+			</td>
+			<td class="right">
+				<textarea id="textarea"></textarea>
+			</td>
+		</tr>
+	</table>
+	<!--
 	<div id="left">
 		<div class="top">
 			<h1 id="classcode"></h1>
 		</div>
 		<div class="bottom">
 			<div id="start-pause-stop">
-				<button id="play-pause" value="paused"><img src="../../img/play.png" alt="A play button"/></button>
+				<button id="play-pause" value="paused"><img src="../../img/play.png" alt="A play button" /></button>
+				<button id="stop"><img src="../../img/stop.png" alt="A stop button" /></button>
 				<script type="text/javascript">
 					$("#play-pause").click(function() {
 						if ($(this).attr("value") == "paused") {
@@ -27,8 +72,14 @@
 							$(this).html('<img src="../../img/play.png" alt="A play button" />');
 						}
 					})
+					$("#stop").click(function () {
+						var playpause = $("#play-pause");
+						if (playpause.attr("value") == "playing") {
+							playpause.attr("value", "paused");
+							playpause.html('<img src="../../img/play.png" alt="A play button" />');
+						}
+					})
 				</script>
-				<button id="stop"></button>
 			</div>
 		</div>
 	</div>
@@ -41,5 +92,6 @@
 			<textarea id="textarea"></textarea>
 		</div>
 	</div>
+	-->
 </body>
 </html>
