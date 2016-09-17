@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/sirvar/notehb/issues"
   },
-  "homepage": "https://github.com/sirvar/notehb#readme"
+  "homepage": "https://github.com/sirvar/notehb#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
 }
