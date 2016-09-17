@@ -20,13 +20,31 @@ img {
 }
 
 #start-pause-stop {
-	width: 150px;
+	width: 200px;
 	margin: 0 auto;
 }
 
+#students {
+	position: absolute;
+	top: 15%;
+	width: 200px;
+	left: calc(10% - 100px);
+}
+
+#num-students {
+	font-size: 50px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+#students>p {
+	margin-top: 0;
+	padding-top: 0;
+}
+
 button {
-	width: 60px;
-	height: 60px;
+	width: 85px;
+	height: 85px;
 	margin: 0;
 	padding: 0;
 	background-color: #FFFFFF;
@@ -34,6 +52,10 @@ button {
 	border: 4px solid #00bfff;
 	border-radius: 5px;
 	transition: background-color ease-in 0.2s;
+}
+
+#play-pause {
+	margin-right: 25px;
 }
 
 button:hover {
