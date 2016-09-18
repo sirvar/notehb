@@ -31,8 +31,7 @@ $(document).ready(function() {
 				// The signed-in user info.
 				var user = result.user;
 				addStudent(user.uid, teacherUid, user.displayName, user.email);
-
-				window.location.href = "/student/dashboard/?uid=" + user.uid;
+				window.location.href = "/student/dashboard/?uid=" + user.uid + "&teacher=" + teacherUid;
 				
 			}).catch(function(error) {
 			  // Handle Errors here.
