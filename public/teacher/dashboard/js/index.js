@@ -14,14 +14,6 @@ $(document).ready(function() {
 	var database = firebase.database();
 	var uid = getParameterByName("uid");
 
-	return firebase.database().ref('/teachers/' + uid).once('value')
-	.then(function(snapshot) {
-		var teacher = snapshot.val();
-
-		$("#classcode").text("Class Code:\n" + teacher.classCode);
-		$("#textarea").text(teacher.latestNote);
-	});
-
 	var seconds = 0;			//Time elapsed in seconds
 	var minutes = 0;
 	var hours = 0;
@@ -159,6 +151,7 @@ $(document).ready(function() {
 	.then(function(snapshot) {
 		var user = snapshot.val();
 		$("#classcode").text("Class Code:\n" + user.classCode);
+		$("#textarea").text(user.latestNote);
 	});
 
 });

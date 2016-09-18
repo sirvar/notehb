@@ -17,7 +17,7 @@ $(document).ready(function() {
 	var i = 0;
 	function checkForUpdate() {
 	    if(i < 1000000) {
-	        return firebase.database().ref('/teachers/' + teacherUid).once('value')
+	        firebase.database().ref('/teachers/' + teacherUid).once('value')
 	        .then(function(snapshot) {
 	        	var teacher = snapshot.val();
 
