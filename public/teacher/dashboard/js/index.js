@@ -8,6 +8,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
+var oldInterim = '';
 
 $(document).ready(function() {
 	var database = firebase.database();
@@ -130,8 +131,23 @@ $(document).ready(function() {
 	            interim_transcript += event.results[i][0].transcript;
 	          }
 	        }
+	        var oldText = $("textarea").html();
+	        var oldInterim = 
+	        // var oldText = $("#interim_textarea").html();
+	        // console.log(oldText);
+	        // console.log(oldInterim);
+	        // oldText = oldText.substring(0, oldText.length - oldInterim.length);
+	        // if (interim_transcript.length > 0) {
+	        // 	oldInterim = interim_transcript;
+	        // }
+	        // if ((final_transcript + interim_transcript).length > 0) {
+	       	// 	$("#textarea").text(final_transcript + interim_transcript);	
+	        // }
+	        // // $("#textarea").text(final_transcript + interim_transcript);
+	        // // console.log(final_transcript + " F");
+	        // console.log(interim_transcript + " F");
 	        $("#textarea").append(final_transcript);
-	        $("#interim_textarea").text(interim_transcript);
+	        // $("#interim_textarea").text(interim_transcript);
 	  };
 
 	return firebase.database().ref('/teachers/' + uid).once('value')
