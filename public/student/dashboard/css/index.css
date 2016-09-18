@@ -125,7 +125,6 @@ textarea:focus {
 }
 
 #container, #container th, #container td {
-    border: 1px solid black;
     border-collapse: collapse;
 }
 
@@ -146,4 +145,8 @@ textarea:focus {
 	border: none;
 	border-right: 3px solid #00bfff;
 	width: 4em;
+}
+
+#top {
+	border-bottom: 4px solid #AAAAAA;
 }

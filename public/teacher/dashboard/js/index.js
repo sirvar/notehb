@@ -42,7 +42,7 @@ $(document).ready(function() {
 	$("#play-pause").click(function() {
 		if ($(this).attr("value") == "paused" && !(paused = paused == stopped) && !stopped) {
 			$(this).attr("value", "playing");
-			$(this).html('<img src="../../img/pause.png" alt="A pause button" />');
+			$(this).html('<img src="../../img/pause-white.png" alt="A pause button" />');
 			$("#stop").css("opacity", 1);
 			startListening(null);
 		}
@@ -50,24 +50,33 @@ $(document).ready(function() {
 			paused = true;
 			$(this).attr("value", "paused");
 			if (!stopped)
-				$(this).html('<img src="../../img/play.png" alt="A play button" />');
+				$(this).html('<img src="../../img/play-white.png" alt="A play button" />');
 			startListening(null);
 		}
-	})
+	});
+
 	$("#stop").click(function () {
 		startListening(null);
 		var playpause = $("#play-pause");
-		if (!stopped && playpause.attr("value") == "playing") {
+		/*if (!stopped && playpause.attr("value") == "playing") {
 			playpause.attr("value", "paused");
-			playpause.html('<img src="../../img/play.png" alt="A play button" />');
-		}
+			playpause.html('<img src="../../img/play-blue.png" alt="A play button" />');
+		}*/
 		if (seconds != 0 || minutes != 0 || hours != 0) {
 			stopped = true;
-			$(playpause).html('<img src="../../img/play.png" alt="A play button" />');
+			$(playpause).html('<img src="../../img/play-blue.png" alt="A play button" />');
 			$(playpause).css("opacity", "0.2");
 			$(this).css("opacity", 0.2);
 		}
-	})
+	});
+
+	$("button").hover(function(event) {
+		console.log($(this).attr("src"));
+		$(this).children(":first").attr("src", $(this).children(":first").attr("src").replace("blue", "white"));
+	}, function(event) {
+		console.log($(this).attr("src"));
+		$(this).children(":first").attr("src", $(this).children(":first").attr("src").replace("white", "blue"));
+	});
 
 
 	// Check if browser supports WebSpeech API
@@ -132,8 +141,6 @@ $(document).ready(function() {
 	          }
 	        }
 	        var oldText = $("#textarea").html();
-	        console.log("FINAL: " + final_transcript);
-	        console.log("INTERIM: " + interim_transcript);
 	        var curText = oldText.substring(0, oldText.length - oldInterim.length);
 	        if (final_transcript != "") {
 	        	curText += final_transcript;
