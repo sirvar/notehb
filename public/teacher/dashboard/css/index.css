@@ -19,20 +19,18 @@ img {
 	height: 100%;
 }
 
-#start-pause-stop {
-	width: 200px;
-	margin: 0 auto;
-}
-
 #students {
-	position: absolute;
-	top: 25%;
+	position: fixed;
+	top: 15%;
 	width: 200px;
+	height: auto;
+	margin: 0;
+	padding: 0;
 	left: calc(10% - 100px);
 }
 
 #num-students {
-	font-size: 50px;
+	font-size: 75px;
 	margin-bottom: 0;
 	padding-bottom: 0;
 }
@@ -44,11 +42,20 @@ img {
 
 #students h2 {
 	margin-top: 10px;
+	font-size: 40px;
+}
+
+#start-pause-stop {
+	position: fixed;
+	top: 50%;
+	left: calc(10% - 125px);
+	width: 250px;
+	height: 110px;
 }
 
 button {
-	width: 85px;
-	height: 85px;
+	width: 100px;
+	height: 100px;
 	margin: 0;
 	padding: 0;
 	background-color: #FFFFFF;
@@ -67,13 +74,13 @@ button:hover {
 }
 
 #timer {
-	position: absolute;
+	position: fixed;
 	padding: 5px 10px;
 	width: 200px; 
 	margin: 0;
 	box-shadow: 3px 3px 8px #999;
 	bottom: 25px;
-	left: calc(10% - 105px);
+	left: calc(10% - 110px);
 }
 
 #timer>h1 {
@@ -81,15 +88,17 @@ button:hover {
 }
 
 textarea {
-	background-color: #F8F8FF;
+	background-color: #FFFFFF;
 	color: #8b8989;
 	font-size: 16px;
-	width: 100%;
+	width: 90%;
+	height: 90%;
+	margin: auto;
 	padding: 0;
 	resize: none;
 	overflow-y: auto;
 	border: none;
-	word-wrap: 	normal;
+	word-wrap: normal;
 }
 
 textarea:focus {
@@ -127,12 +136,34 @@ table {
 	width: 20%;
 }
 
-table, th, td {
-    border: 1px solid black;
+table, tr, td {
+    /*border: 1px solid black;*/
     border-collapse: collapse;
+    padding: 0;
+    margin: 0;
 }
 
 td {
 	padding: 0;
 	margin: 0;
+}
+
+#top .left div {
+	width: 100%;
+	height: calc(100% + 10px);
+	margin: -10px 0 0 0;
+	padding: 0;
+	border-bottom: 5px solid #000000;
+	border-right: 5px solid #000000;
+	border-bottom-right-radius: 25px;
+}
+
+#bottom .right div {
+	width: 100%;
+	height: calc(100% + 10px);
+	margin: -10px 0 0 0;
+	padding: 0;
+	border-top: 5px solid #000000;
+	border-left: 5px solid #000000;
+	border-top-left-radius: 25px;
 }

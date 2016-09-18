@@ -14,7 +14,7 @@
 	<table>
 		<tr id="top">
 			<td class="left">
-				<h1 id="classcode"></h1>
+				<div><h1 id="classcode"></h1></div>
 			</td>
 			<td class="right">
 				<img id="logo" src="../../img/notehb-logo.png">
@@ -35,14 +35,9 @@
 				</div>
 			</td>
 			<td class="right">
-				<textarea id="textarea" class="linedn" cols="60" rows="50"></textarea>
-				<script>
-					$(function() {
-						$(".lined").linedtextarea(
-							{selectedLine: 1}
-						);
-					});
-				</script>
+				<div>
+					<textarea id="textarea"></textarea>
+				</div>
 			</td>
 		</tr>
 	</table>
