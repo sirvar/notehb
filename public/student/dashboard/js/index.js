@@ -14,6 +14,14 @@ $(document).ready(function() {
 	var uid = getParameterByName("uid");
 	var teacherUid = getParameterByName("teacher");
 
+	$("#textarea").keyup(update).mousedown(update).mousemove(update).mouseup(update);
+
+	function update(e) {
+		// here we fetch our text range object
+		var range = $(this).getSelection();
+		console.log(range.text);
+	}
+
 	var i = 0;
 	function checkForUpdate() {
 	    if(i < 1000000) {
