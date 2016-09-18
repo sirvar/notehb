@@ -131,8 +131,19 @@ $(document).ready(function() {
 	            interim_transcript += event.results[i][0].transcript;
 	          }
 	        }
-	        var oldText = $("textarea").html();
-	        var oldInterim = 
+	        var oldText = $("#textarea").html();
+	        console.log("FINAL: " + final_transcript);
+	        console.log("INTERIM: " + interim_transcript);
+	        var curText = oldText.substring(0, oldText.length - oldInterim.length);
+	        if (final_transcript != "") {
+	        	curText += final_transcript;
+	        	oldInterim = "";
+	        }
+	        else {
+	        	curText += interim_transcript;
+				oldInterim = interim_transcript;
+	        }
+
 	        // var oldText = $("#interim_textarea").html();
 	        // console.log(oldText);
 	        // console.log(oldInterim);
@@ -146,7 +157,7 @@ $(document).ready(function() {
 	        // // $("#textarea").text(final_transcript + interim_transcript);
 	        // // console.log(final_transcript + " F");
 	        // console.log(interim_transcript + " F");
-	        $("#textarea").append(final_transcript);
+	        $("#textarea").html(curText);
 	        // $("#interim_textarea").text(interim_transcript);
 	  };
 
