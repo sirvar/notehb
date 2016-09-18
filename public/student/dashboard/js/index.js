@@ -12,11 +12,37 @@ firebase.initializeApp(config);
 $(document).ready(function() {
 	var database = firebase.database();
 	var uid = getParameterByName("uid");
+	var teacherUid = getParameterByName("teacher");
 
-	return firebase.database().ref('/teachers/' + uid).once('value')
+	$("#textarea").keyup(update).mousedown(update).mousemove(update).mouseup(update);
+
+	function update(e) {
+		// here we fetch our text range object
+		var range = $(this).getSelection();
+		console.log(range.text);
+	}
+
+	var i = 0;
+	function checkForUpdate() {
+	    if(i < 1000000) {
+	        firebase.database().ref('/teachers/' + teacherUid).once('value')
+	        .then(function(snapshot) {
+	        	var teacher = snapshot.val();
+
+	        	$(".lined").text(teacher.latestNote);
+	        });
+	        i++;
+	        // Continue the loop in 3s
+	        setTimeout(checkForUpdate, 1500);
+	    }
+	}
+	// Start the loop
+	setTimeout(checkForUpdate, 0);
+	return firebase.database().ref('/teachers/' + teacherUid).once('value')
 	.then(function(snapshot) {
-		var user = snapshot.val();
-		$("#classcode").text("Class Code:\n" + user.classCode);
+		var teacher = snapshot.val();
+
+		$("#classcode").text("Class Code:\n" + teacher.classCode);
 	});
 });
 
@@ -28,12 +54,4 @@ function getParameterByName(name, url) {
     if (!results) return null;
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
-function addTeacher(userId, name, email, classCode) {
-	firebase.database().ref('teachers/' + userId).set({
-		username: name,
-		email: email,
-		classCode : classCode
-	});
 }

@@ -154,10 +154,15 @@ $(document).ready(function() {
 	        addNote(uid, curText);
 	  };
 
+	$("#textarea").bind('input propertychange', function() {
+		addNote(uid, $("#textarea").val());
+	})
+
 	return firebase.database().ref('/teachers/' + uid).once('value')
 	.then(function(snapshot) {
 		var user = snapshot.val();
 		$("#classcode").text("Class Code:\n" + user.classCode);
+		$("#textarea").text(user.latestNote);
 	});
 
 });
