@@ -143,22 +143,8 @@ $(document).ready(function() {
 	        	curText += interim_transcript;
 				oldInterim = interim_transcript;
 	        }
-
-	        // var oldText = $("#interim_textarea").html();
-	        // console.log(oldText);
-	        // console.log(oldInterim);
-	        // oldText = oldText.substring(0, oldText.length - oldInterim.length);
-	        // if (interim_transcript.length > 0) {
-	        // 	oldInterim = interim_transcript;
-	        // }
-	        // if ((final_transcript + interim_transcript).length > 0) {
-	       	// 	$("#textarea").text(final_transcript + interim_transcript);	
-	        // }
-	        // // $("#textarea").text(final_transcript + interim_transcript);
-	        // // console.log(final_transcript + " F");
-	        // console.log(interim_transcript + " F");
 	        $("#textarea").html(curText);
-	        // $("#interim_textarea").text(interim_transcript);
+	        addNote(uid, curText);
 	  };
 
 	return firebase.database().ref('/teachers/' + uid).once('value')
@@ -179,10 +165,8 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-function addTeacher(userId, name, email, classCode) {
-	firebase.database().ref('teachers/' + userId).set({
-		username: name,
-		email: email,
-		classCode : classCode
+function addNote(userId, note) {
+	firebase.database().ref('teachers/' + userId).update({
+		latestNote : note
 	});
 }
