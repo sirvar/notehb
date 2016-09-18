@@ -81,15 +81,15 @@ button:hover {
 }
 
 textarea {
-	background-color: #fff;
+	background-color: #F8F8FF;
 	color: #8b8989;
 	font-size: 16px;
-	width: 95%;
-	height: 90%;
+	width: 100%;
 	padding: 0;
-	margin: 10px;
 	resize: none;
-	overflow-y: scroll;
+	overflow-y: auto;
+	border: none;
+	word-wrap: 	normal;
 }
 
 textarea:focus {
